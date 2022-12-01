@@ -4,13 +4,13 @@ from draw_seating import draw_seating
 occupied = 0
 passenger_number = 30
 
-def aisle_occupy():
+def aisle_seat_occupy():
     global occupied
     row = 0
     is_occupied = -1
     while occupied < passenger_number and occupied != is_occupied:
         is_occupied = occupied
-        for i in range(length):
+        for i in range(seating_length):
             if seatings_array[i][1] > row:
                 if i == 0:
                     occupied += 1
@@ -20,7 +20,7 @@ def aisle_occupy():
                     seatings[i][row][aisle_col] = occupied
                     if occupied >= passenger_number:
                         break
-                elif i == length - 1:
+                elif i == seating_length - 1:
                     occupied += 1
                     aisle_col = 0
                     # opposite aisle seats
@@ -43,7 +43,7 @@ def aisle_occupy():
         row += 1
 
 
-def window_occupy():
+def window_seat_occupy():
     row = 0
     global occupied
     global passenger_number
@@ -53,25 +53,25 @@ def window_occupy():
         # filling window seats
         if seatings_array[0][1] > row:
             occupied += 1
-            window = 0
-            seatings[0][row][window] = occupied
+            window_seat = 0
+            seatings[0][row][window_seat] = occupied
             if occupied >= passenger_number:
                 break
-        if seatings_array[length-1][1] > row:
+        if seatings_array[seating_length-1][1] > row:
             occupied += 1
-            window = seatings_array[length-1][0] - 1
-            seatings[length-1][row][window] = occupied
+            window_seat = seatings_array[seating_length-1][0] - 1
+            seatings[seating_length-1][row][window_seat] = occupied
             if occupied >= passenger_number:
                 break
         row += 1
 
-def middle_occupy():
+def middle_seat_occupy():
     row = 0
     is_occupied = 0
     global occupied
     while occupied < passenger_number and occupied != is_occupied:
         is_occupied = occupied
-        for i in range(length):
+        for i in range(seating_length):
             if seatings_array[i][1] > row:
                 if seatings_array[i][0] > 2:
                     for col in range(1, seatings_array[i][0] - 1):
@@ -89,8 +89,8 @@ def middle_occupy():
 seatings_array = [[3,4], [4,5], [2,3], [3,4]]
 
 seatings = visualize_seating(seatings_array)
-length = len(seatings_array)
-aisle_occupy()
-window_occupy()
-middle_occupy()
-draw_seating(seatings, length, passenger_number, seatings_array)
+seating_length = len(seatings_array)
+aisle_seat_occupy()
+window_seat_occupy()
+middle_seat_occupy()
+draw_seating(seatings, seating_length, passenger_number, seatings_array)
