@@ -12,4 +12,7 @@ Test Cases:
 Input :  [[3,4], [4,5], [2,3], [3,4]]
 
 Output : 
+
+
+
 ![output](https://raw.githubusercontent.com/Aditya9111/seating_algorithm/main/assets/1output.png)             
