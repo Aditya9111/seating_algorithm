@@ -85,8 +85,8 @@ def middle_occupy():
 
 
 
-seatings_array = [[3,2], [4,3], [2,3], [3,4]]
-#seatings_array = [[3,4], [4,5], [2,3], [3,4]]
+#seatings_array = [[3,2], [4,3], [2,3], [3,4]]
+seatings_array = [[3,4], [4,5], [2,3], [3,4]]
 
 seatings = visualize_seating(seatings_array)
 length = len(seatings_array)
