@@ -12,9 +12,4 @@ Test Cases:
 Input :  [[3,4], [4,5], [2,3], [3,4]]
 
 Output : 
-
- 25,0 ,1      2 ,0 ,0 ,3      4 ,5      6 ,0 ,26
- 27,0 ,7      8 ,0 ,0 ,9      10,11     12,0 ,28
- 29,0 ,13     14,0 ,0 ,15     16,17     18,0 ,30
- 0 ,0 ,19     20,0 ,0 ,21               22,0 ,0 
-              23,0 ,0 ,24                    
+[output](https://raw.githubusercontent.com/Aditya9111/seating_algorithm/main/assets/1output.png)             
